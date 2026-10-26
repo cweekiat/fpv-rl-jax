@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Pixels to Sticks — Building Notes</title>
+<meta name="description" content="How a camera-only FPV acro pilot was built in pure JAX on a laptop CPU: how the problem was bounded, the teacher-student build-up, what went wrong, and what it taught.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{--bg:#f6f7f9;--paper:#fff;--fg:#151a21;--muted:#5b6575;--line:#dfe3ea;--signal:#1f6bff;--signal-soft:#e8efff;--trace:#0aa4c2;--warn:#b86a00;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0c1016;--paper:#121821;--fg:#e5e9ef;--muted:#8e99aa;--line:#253042;--signal:#4d8dff;--signal-soft:#15213a;--trace:#35c3dd;--warn:#e3a34a;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--fg);font:17px/1.7 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--signal)}
+.wrap{width:min(100%,1080px);margin:0 auto;padding:clamp(28px,6vw,64px) max(16px,env(safe-area-inset-left,0px),4vw) 80px}
+.wrap>p,.wrap>ul,.wrap>ol{max-width:72ch}
+.dek{max-width:62ch}h1{max-width:22ch}
+.kicker{font:500 12px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--signal)}
+h1{max-width:none;font:600 clamp(30px,5.2vw,54px)/1.1 "Chakra Petch",sans-serif;margin:14px 0 16px;text-wrap:balance}
+.dek{font-size:19px;color:var(--muted);margin:0 0 22px}
+.meta{font:13px "IBM Plex Mono",monospace;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0}
+h2{font:600 26px/1.25 "Chakra Petch",sans-serif;margin:56px 0 12px;text-wrap:balance}
+h2 .n{color:var(--signal);font-family:"IBM Plex Mono",monospace;font-size:15px;margin-right:10px;vertical-align:3px}
+h3{font-size:18px;margin:30px 0 6px}
+p{margin:0 0 16px}
+figure{margin:28px 0;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px}
+figure img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;margin:28px 0}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px}
+.stat b{display:block;font:500 26px "IBM Plex Mono",monospace;color:var(--signal)}
+.stat span{font-size:13px;color:var(--muted)}
+.lesson{border-left:3px solid var(--signal);background:var(--signal-soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:20px 0}
+.lesson .lbl{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);display:block;margin-bottom:2px}
+.pit{border-left:3px solid var(--warn);background:color-mix(in srgb,var(--warn) 9%,transparent);padding:12px 16px;border-radius:0 8px 8px 0;margin:20px 0}
+.pit .lbl{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:2px}
+code{font:14.5px "IBM Plex Mono",monospace;background:var(--paper);border:1px solid var(--line);padding:1px 5px;border-radius:4px}
+.tl{list-style:none;padding:0;margin:24px 0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 18px 22px}
+.tl li::before{content:"";position:absolute;left:-6px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--paper);border:2px solid var(--signal)}
+.tl b{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:14px;color:var(--signal)}
+.tbl{overflow-x:auto;margin:22px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--paper)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+th{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td.num{font-family:"IBM Plex Mono",monospace}
+ol.lessons{padding-left:22px}ol.lessons li{margin-bottom:10px}
+footer{margin-top:64px;border-top:1px solid var(--line);padding-top:18px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="kicker">Building notes · fpv-rl-jax</div>
+  <h1>From pixels to sticks: three lessons from building a camera-only FPV pilot</h1>
+  <p class="dek">A simulated racing drone learns to fly to a distant target from noisy 32×24 video alone, trained end to end in pure JAX on one laptop CPU. The algorithms mattered less than three habits: bounding the problem, building up slowly, and investing in a pipeline that made every experiment cheap.</p>
+  <div class="meta"><span>Wee Kiat Chan</span><span>2026</span><span><a href="from_pixels_to_sticks.pdf">Paper (PDF)</a></span><span><a href="video/fpv_rl_ral.mp4">Video</a></span><span><a href="https://github.com/cweekiat/fpv-rl-jax">Code</a></span></div>
+
+  <figure><img src="figures/fpv_view.gif" alt="The student camera view and its top-down flight path"><figcaption>Left: the 32×24 camera image the student flies from, delayed and noisy. Right: its path to the target, seen from above. The student never gets its position, velocity or attitude.</figcaption></figure>
+
+  <div class="stats">
+    <div class="stat"><b>77%</b><span>best camera-only student, targets 100–200 m away</span></div>
+    <div class="stat"><b>3%</b><span>calibrated hand-designed visual-servo pilot</span></div>
+    <div class="stat"><b>18</b><span>randomised drone, wind and camera parameters</span></div>
+    <div class="stat"><b>$0</b><span>cloud spend: no GPU, no cluster</span></div>
+  </div>
+
+  <h2><span class="n">01</span>Formulate and bound the problem first</h2>
+  <p>The starting point was a vague question: <em>can a drone fly itself the way a human FPV pilot does, from video alone?</em> Before writing any learning code I turned it into something that could be built, measured and finished:</p>
+  <ul>
+    <li><b>Who it is for.</b> The answer had to be useful to people building camera-first drones, so the pilot gets what such a drone actually has: delayed, noisy, low-resolution video and its own past stick commands. No GPS, no state estimate.</li>
+    <li><b>What it does.</b> It outputs throttle plus roll, pitch and yaw <em>rates</em> (acro mode), the hardest and most honest control interface, with no stabilised mode to lean on.</li>
+    <li><b>How we know it works.</b> Success, crash and timeout rates over 1024 episodes, with identical seeds for every pilot, against a fixed goal radius and time limit.</li>
+    <li><b>What is out of scope.</b> Obstacles, multiple targets and real hardware, written down so they could not creep in.</li>
+  </ul>
+  <p>Then I cut it down further. Version one only had targets 4–12 m away and 5-second flights. It was small enough to finish in an afternoon of compute and still the real problem. Only when it worked did the scope grow to targets 100–200 m away, 0–100 m altitude and a ~40 m/s drone.</p>
+  <figure><img src="figures/fig5_task.png" alt="Task definition"><figcaption>The task, written down before the first training run: what the pilot sees, what it controls, and what counts as success.</figcaption></figure>
+  <p>Bounding also meant making the simulator honest about what the user would really face. Each episode draws a different drone, wind and camera (18 randomised parameters), with latency, motor lag, battery sag and frame freezes. When a convenient shortcut made results look too good, such as drawing a far target bigger than a pixel, it was removed, even though the numbers dropped.</p>
+  <div class="lesson"><b class="lbl">Lesson</b>A sharp, numeric definition of done turns an open-ended research idea into a product with a finish line. Every later decision ("is this better?") became a question the data could answer.</div>
+
+  <h2><span class="n">02</span>Build up slowly, one verified layer at a time</h2>
+  <p>Learning acrobatic flight from pixels in one go is slow and fragile. So the system was assembled as a stack of layers, each shipped only after the one below it was measured:</p>
+  <ol class="tl">
+    <li><b>Teacher</b>: a policy trained with full state information. It had to be near perfect first (99.9% at long range), because a weak teacher makes every later result meaningless.</li>
+    <li><b>Student by imitation</b>: the camera-only student copies the teacher with DAgger, flying itself while the teacher labels what it should have done. Plain behaviour cloning managed only 16.4%; learning to recover from its own mistakes was essential.</li>
+    <li><b>Memory</b>: a GRU, the single most robust gain (+21.7 points).</li>
+    <li><b>RL fine-tuning</b>: the student practises on its own, with an imitation anchor that fades out.</li>
+  </ol>
+  <figure><img src="figures/fig1_overview.png" alt="Teacher-student overview"><figcaption>Teacher → imitation → memory → RL fine-tuning. Each arrow was added only after the previous stage was measured.</figcaption></figure>
+  <p>Building slowly also made failures legible. The first long-range student scored 0.6%. Because only one thing had changed, the cause was findable: the teacher flew straight at targets the camera could not yet see, so the student was imitating something impossible. The fix was a teacher limited to what the camera could see, which searches the way the student must (99.5%, and now copyable).</p>
+  <p>The same discipline applied to claims. When a review asked for a control experiment, a favourite conclusion ("memory tracks attitude") turned out wrong: memory carries <b>velocity</b> (R² 0.57 → 0.79). An early single-seed "+18 points from RL" shrank to a defensible +3 to +7 once compared against a compute-matched control over 5 seeds.</p>
+  <div class="tbl"><table>
+    <tr><th>Long range, camera only, 5 seeds</th><th>Imitation</th><th>+ more DAgger</th><th>+ RL fine-tune</th></tr>
+    <tr><td>No memory</td><td class="num">44.8 ± 12.9%</td><td class="num">60.3 ± 6.9%</td><td class="num">67.5 ± 5.5%</td></tr>
+    <tr><td>Memory (GRU)</td><td class="num">66.5 ± 6.8%</td><td class="num">74.2 ± 6.6%</td><td class="num">77.2 ± 10.2%</td></tr>
+  </table></div>
+  <div class="lesson"><b class="lbl">Lesson</b>Change one thing, measure it, then move on. Small verified steps were faster overall than big leaps, because nothing ever had to be untangled.</div>
+
+  <h2><span class="n">03</span>Build a systematic pipeline to speed up experimentation</h2>
+  <p>Over the project there were dozens of variants, seeds and ablations. Running them by hand would have capped how many questions I could ask. So the experiment loop itself was treated as the product:</p>
+  <ul>
+    <li><b>One command reproduces everything.</b> <code>reproduce.sh</code> runs every training run, evaluation, figure and the video. Each step skips work that already exists, so a crash or a reboot costs minutes of rework, not a restart.</li>
+    <li><b>Clear interfaces.</b> Training, evaluation and analysis are small CLI tools with explicit flags; every checkpoint stores the exact simulator and arguments that produced it, and every evaluation is written as JSON to <code>results/</code>. A person, a script or an automated agent can launch, compare and resume runs the same way.</li>
+    <li><b>Reliability and cost by design.</b> Atomic, periodic checkpoints; throughput logged per interval, which exposed thermal throttling on a fanless laptop; hand-written convolutions after XLA's CPU kernels proved slow inside training loops. The whole study runs on one laptop with no cloud bill.</li>
+    <li><b>A console for people.</b> A small web front end on top of the same tools lets you configure the environment, drone, target and training, schedule runs, and watch progress bars and live success curves, with duration estimates calibrated on the machine and guard rails against missing checkpoints, overwrites and runaway jobs.</li>
+    <li><b>Results flow straight into communication.</b> Figures, tables and the video are generated by scripts from the saved results and checkpoints, so a new result updates every artefact without retyping a number.</li>
+  </ul>
+  <figure><img src="figures/fig13_training_lr.png" alt="Training curves across seeds"><figcaption>Five seeds per condition was affordable only because launching, monitoring and evaluating a run cost a single command.</figcaption></figure>
+  <p>The pipeline also made the work easy to extend. A follow-up that swaps the camera for a 640×512 thermal sensor over an analog video link, adds drone mass and a noisy target cue, reused every stage unchanged: new sensor model in, same training, evaluation and console out.</p>
+  <div class="lesson"><b class="lbl">Lesson</b>The speed of research is the speed of the experiment loop. Time spent making runs cheap, safe and observable paid for itself many times over.</div>
+
+  <h2><span class="n">→</span>Where it stands</h2>
+  <p>The best camera-only student reaches 77% of targets 100–200 m away at up to 40 m/s, against 3% for a carefully tuned classical pilot. Most remaining failures are search, not control: in 55–66% of timeouts the student never gets within 20 m. That sets the next iteration: help the pilot find the target, then take it to hardware.</p>
+  <figure><img src="figures/lr_flights.png" alt="Teacher and student long-range flights"><figcaption>Long-range flights: teacher versus camera-only student.</figcaption></figure>
+
+  <footer>Simulation only; no hardware flights yet. Code under the PolyForm Noncommercial License 1.0.0, figures and results under CC BY-NC 4.0. · <a href="https://github.com/cweekiat/fpv-rl-jax">github.com/cweekiat/fpv-rl-jax</a></footer>
+</article>
+</body>
+</html>
