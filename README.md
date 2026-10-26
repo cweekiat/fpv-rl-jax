@@ -7,7 +7,7 @@ or attitude. Every episode has a different drone, wind and camera (18 randomised
 parameters). Physics, rendering, PPO, DAgger and RL fine-tuning are all written in
 pure JAX and train on a laptop CPU.
 
-🎬 **Video:** [`docs/video/fpv_rl_ral.mp4`](docs/video/fpv_rl_ral.mp4)
+📄 **Paper:** [`docs/from_pixels_to_sticks.pdf`](docs/from_pixels_to_sticks.pdf) · 🎬 **Video:** [`docs/video/fpv_rl_ral.mp4`](docs/video/fpv_rl_ral.mp4)
 
 <p align="center"><img src="docs/figures/fpv_view.gif" width="640" alt="What the camera-only student sees while flying to the target"></p>
 
