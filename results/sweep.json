@@ -1,0 +1,652 @@
+{
+  "twr": {
+    "teacher (true state)": [
+      {
+        "success": 0.62890625,
+        "crash": 0.34375,
+        "timeout": 0.02734375,
+        "time_to_target": 3.6694412231445312,
+        "avg_speed": 2.1442978382110596,
+        "peak_speed": 8.479016304016113,
+        "n": 256,
+        "value": 1.5
+      },
+      {
+        "success": 0.734375,
+        "crash": 0.15234375,
+        "timeout": 0.11328125,
+        "time_to_target": 2.072765827178955,
+        "avg_speed": 5.022592544555664,
+        "peak_speed": 11.558374404907227,
+        "n": 256,
+        "value": 2.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 1.0153124332427979,
+        "avg_speed": 7.87294864654541,
+        "peak_speed": 14.574710845947266,
+        "n": 256,
+        "value": 2.5
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.92445307970047,
+        "avg_speed": 8.643997192382812,
+        "peak_speed": 16.512115478515625,
+        "n": 256,
+        "value": 3.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8100780844688416,
+        "avg_speed": 9.861183166503906,
+        "peak_speed": 19.168495178222656,
+        "n": 256,
+        "value": 4.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.7457031011581421,
+        "avg_speed": 10.711769104003906,
+        "peak_speed": 20.007898330688477,
+        "n": 256,
+        "value": 5.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8211718797683716,
+        "avg_speed": 10.799951553344727,
+        "peak_speed": 20.30413818359375,
+        "n": 256,
+        "value": 6.0
+      },
+      {
+        "success": 0.9765625,
+        "crash": 0.015625,
+        "timeout": 0.0078125,
+        "time_to_target": 1.1792800426483154,
+        "avg_speed": 9.648700714111328,
+        "peak_speed": 20.451263427734375,
+        "n": 256,
+        "value": 7.0
+      }
+    ],
+    "student (camera only)": [
+      {
+        "success": 0.3125,
+        "crash": 0.5546875,
+        "timeout": 0.1328125,
+        "time_to_target": 3.6519997119903564,
+        "avg_speed": 2.0228705406188965,
+        "peak_speed": 8.269229888916016,
+        "n": 256,
+        "value": 1.5
+      },
+      {
+        "success": 0.49609375,
+        "crash": 0.296875,
+        "timeout": 0.20703125,
+        "time_to_target": 2.537795066833496,
+        "avg_speed": 3.725756883621216,
+        "peak_speed": 11.027463912963867,
+        "n": 256,
+        "value": 2.0
+      },
+      {
+        "success": 0.72265625,
+        "crash": 0.17578125,
+        "timeout": 0.1015625,
+        "time_to_target": 1.7557837963104248,
+        "avg_speed": 5.745447635650635,
+        "peak_speed": 13.510995864868164,
+        "n": 256,
+        "value": 2.5
+      },
+      {
+        "success": 0.82421875,
+        "crash": 0.09375,
+        "timeout": 0.08203125,
+        "time_to_target": 1.4678674936294556,
+        "avg_speed": 6.849897861480713,
+        "peak_speed": 15.372007369995117,
+        "n": 256,
+        "value": 3.0
+      },
+      {
+        "success": 0.85546875,
+        "crash": 0.09765625,
+        "timeout": 0.046875,
+        "time_to_target": 1.6063013076782227,
+        "avg_speed": 6.772610187530518,
+        "peak_speed": 17.61136245727539,
+        "n": 256,
+        "value": 4.0
+      },
+      {
+        "success": 0.74609375,
+        "crash": 0.09765625,
+        "timeout": 0.15625,
+        "time_to_target": 1.8360209465026855,
+        "avg_speed": 6.765822887420654,
+        "peak_speed": 19.512649536132812,
+        "n": 256,
+        "value": 5.0
+      },
+      {
+        "success": 0.484375,
+        "crash": 0.2265625,
+        "timeout": 0.2890625,
+        "time_to_target": 2.1496775150299072,
+        "avg_speed": 6.195034503936768,
+        "peak_speed": 21.636558532714844,
+        "n": 256,
+        "value": 6.0
+      },
+      {
+        "success": 0.28125,
+        "crash": 0.23046875,
+        "timeout": 0.48828125,
+        "time_to_target": 2.5958333015441895,
+        "avg_speed": 5.434895992279053,
+        "peak_speed": 23.564735412597656,
+        "n": 256,
+        "value": 7.0
+      }
+    ]
+  },
+  "latency": {
+    "teacher (true state)": [
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8270311951637268,
+        "avg_speed": 9.716962814331055,
+        "peak_speed": 17.98105812072754,
+        "n": 256,
+        "value": 0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8452343344688416,
+        "avg_speed": 9.512181282043457,
+        "peak_speed": 18.310657501220703,
+        "n": 256,
+        "value": 1
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8658593893051147,
+        "avg_speed": 9.29082202911377,
+        "peak_speed": 18.46029281616211,
+        "n": 256,
+        "value": 2
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.89906245470047,
+        "avg_speed": 8.999080657958984,
+        "peak_speed": 18.280973434448242,
+        "n": 256,
+        "value": 3
+      },
+      {
+        "success": 0.98046875,
+        "crash": 0.015625,
+        "timeout": 0.00390625,
+        "time_to_target": 0.9501991271972656,
+        "avg_speed": 8.545289993286133,
+        "peak_speed": 17.600399017333984,
+        "n": 256,
+        "value": 4
+      }
+    ],
+    "student (camera only)": [
+      {
+        "success": 0.9140625,
+        "crash": 0.05078125,
+        "timeout": 0.03515625,
+        "time_to_target": 1.515470027923584,
+        "avg_speed": 6.880508899688721,
+        "peak_speed": 16.406147003173828,
+        "n": 256,
+        "value": 0
+      },
+      {
+        "success": 0.796875,
+        "crash": 0.09765625,
+        "timeout": 0.10546875,
+        "time_to_target": 1.5352941751480103,
+        "avg_speed": 6.87437629699707,
+        "peak_speed": 17.080245971679688,
+        "n": 256,
+        "value": 1
+      },
+      {
+        "success": 0.65625,
+        "crash": 0.21875,
+        "timeout": 0.125,
+        "time_to_target": 1.7288095951080322,
+        "avg_speed": 6.524938583374023,
+        "peak_speed": 17.326162338256836,
+        "n": 256,
+        "value": 2
+      },
+      {
+        "success": 0.28515625,
+        "crash": 0.4765625,
+        "timeout": 0.23828125,
+        "time_to_target": 1.4232876300811768,
+        "avg_speed": 7.181200981140137,
+        "peak_speed": 17.242752075195312,
+        "n": 256,
+        "value": 3
+      },
+      {
+        "success": 0.078125,
+        "crash": 0.828125,
+        "timeout": 0.09375,
+        "time_to_target": 1.5829999446868896,
+        "avg_speed": 6.928715705871582,
+        "peak_speed": 17.148195266723633,
+        "n": 256,
+        "value": 4
+      }
+    ]
+  },
+  "wind": {
+    "teacher (true state)": [
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8462499380111694,
+        "avg_speed": 9.501836776733398,
+        "peak_speed": 18.206745147705078,
+        "n": 256,
+        "value": 0.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8457812666893005,
+        "avg_speed": 9.509015083312988,
+        "peak_speed": 18.222715377807617,
+        "n": 256,
+        "value": 1.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8460937738418579,
+        "avg_speed": 9.505460739135742,
+        "peak_speed": 18.22341537475586,
+        "n": 256,
+        "value": 2.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8460937142372131,
+        "avg_speed": 9.5076265335083,
+        "peak_speed": 18.199649810791016,
+        "n": 256,
+        "value": 3.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8480468392372131,
+        "avg_speed": 9.492724418640137,
+        "peak_speed": 18.162919998168945,
+        "n": 256,
+        "value": 4.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8510937094688416,
+        "avg_speed": 9.466588973999023,
+        "peak_speed": 18.112445831298828,
+        "n": 256,
+        "value": 5.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8538280725479126,
+        "avg_speed": 9.448455810546875,
+        "peak_speed": 18.030975341796875,
+        "n": 256,
+        "value": 6.0
+      }
+    ],
+    "student (camera only)": [
+      {
+        "success": 0.84765625,
+        "crash": 0.08984375,
+        "timeout": 0.0625,
+        "time_to_target": 1.6176958084106445,
+        "avg_speed": 6.7814249992370605,
+        "peak_speed": 17.064952850341797,
+        "n": 256,
+        "value": 0.0
+      },
+      {
+        "success": 0.80078125,
+        "crash": 0.109375,
+        "timeout": 0.08984375,
+        "time_to_target": 1.5184388160705566,
+        "avg_speed": 7.025613307952881,
+        "peak_speed": 17.202428817749023,
+        "n": 256,
+        "value": 1.0
+      },
+      {
+        "success": 0.84765625,
+        "crash": 0.1015625,
+        "timeout": 0.05078125,
+        "time_to_target": 1.5870966911315918,
+        "avg_speed": 6.754939079284668,
+        "peak_speed": 17.124282836914062,
+        "n": 256,
+        "value": 2.0
+      },
+      {
+        "success": 0.80859375,
+        "crash": 0.09375,
+        "timeout": 0.09765625,
+        "time_to_target": 1.6762317419052124,
+        "avg_speed": 6.539294719696045,
+        "peak_speed": 17.052705764770508,
+        "n": 256,
+        "value": 3.0
+      },
+      {
+        "success": 0.7890625,
+        "crash": 0.109375,
+        "timeout": 0.1015625,
+        "time_to_target": 1.6770297288894653,
+        "avg_speed": 6.347222805023193,
+        "peak_speed": 17.077001571655273,
+        "n": 256,
+        "value": 4.0
+      },
+      {
+        "success": 0.78125,
+        "crash": 0.10546875,
+        "timeout": 0.11328125,
+        "time_to_target": 1.8970999717712402,
+        "avg_speed": 5.719404220581055,
+        "peak_speed": 17.057207107543945,
+        "n": 256,
+        "value": 5.0
+      },
+      {
+        "success": 0.76953125,
+        "crash": 0.109375,
+        "timeout": 0.12109375,
+        "time_to_target": 2.080507516860962,
+        "avg_speed": 5.209681987762451,
+        "peak_speed": 16.885272979736328,
+        "n": 256,
+        "value": 6.0
+      }
+    ]
+  },
+  "pix_noise": {
+    "teacher (true state)": [
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8456249237060547,
+        "avg_speed": 9.510292053222656,
+        "peak_speed": 18.23147201538086,
+        "n": 256,
+        "value": 0.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8456249237060547,
+        "avg_speed": 9.510292053222656,
+        "peak_speed": 18.23147201538086,
+        "n": 256,
+        "value": 0.025
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8456249237060547,
+        "avg_speed": 9.510292053222656,
+        "peak_speed": 18.23147201538086,
+        "n": 256,
+        "value": 0.05
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8456249237060547,
+        "avg_speed": 9.510292053222656,
+        "peak_speed": 18.23147201538086,
+        "n": 256,
+        "value": 0.1
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8456249237060547,
+        "avg_speed": 9.510292053222656,
+        "peak_speed": 18.23147201538086,
+        "n": 256,
+        "value": 0.15
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8456249237060547,
+        "avg_speed": 9.510292053222656,
+        "peak_speed": 18.23147201538086,
+        "n": 256,
+        "value": 0.2
+      }
+    ],
+    "student (camera only)": [
+      {
+        "success": 0.8359375,
+        "crash": 0.1015625,
+        "timeout": 0.0625,
+        "time_to_target": 1.6061680316925049,
+        "avg_speed": 6.794884204864502,
+        "peak_speed": 17.01872444152832,
+        "n": 256,
+        "value": 0.0
+      },
+      {
+        "success": 0.8046875,
+        "crash": 0.1171875,
+        "timeout": 0.078125,
+        "time_to_target": 1.5346602201461792,
+        "avg_speed": 6.87894868850708,
+        "peak_speed": 17.135950088500977,
+        "n": 256,
+        "value": 0.025
+      },
+      {
+        "success": 0.80859375,
+        "crash": 0.125,
+        "timeout": 0.06640625,
+        "time_to_target": 1.6635748147964478,
+        "avg_speed": 6.645992755889893,
+        "peak_speed": 17.124034881591797,
+        "n": 256,
+        "value": 0.05
+      },
+      {
+        "success": 0.57421875,
+        "crash": 0.1953125,
+        "timeout": 0.23046875,
+        "time_to_target": 1.8661224842071533,
+        "avg_speed": 6.387094020843506,
+        "peak_speed": 17.34912109375,
+        "n": 256,
+        "value": 0.1
+      },
+      {
+        "success": 0.2109375,
+        "crash": 0.64453125,
+        "timeout": 0.14453125,
+        "time_to_target": 1.3914815187454224,
+        "avg_speed": 7.485851764678955,
+        "peak_speed": 16.479965209960938,
+        "n": 256,
+        "value": 0.15
+      },
+      {
+        "success": 0.07421875,
+        "crash": 0.9140625,
+        "timeout": 0.01171875,
+        "time_to_target": 0.9336841702461243,
+        "avg_speed": 7.6728291511535645,
+        "peak_speed": 14.904789924621582,
+        "n": 256,
+        "value": 0.2
+      }
+    ]
+  },
+  "cam_tilt": {
+    "teacher (true state)": [
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8479686975479126,
+        "avg_speed": 9.479581832885742,
+        "peak_speed": 17.910991668701172,
+        "n": 256,
+        "value": 10.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8467187285423279,
+        "avg_speed": 9.49653434753418,
+        "peak_speed": 18.074581146240234,
+        "n": 256,
+        "value": 20.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8456249833106995,
+        "avg_speed": 9.509459495544434,
+        "peak_speed": 18.225751876831055,
+        "n": 256,
+        "value": 30.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8446093201637268,
+        "avg_speed": 9.522485733032227,
+        "peak_speed": 18.366636276245117,
+        "n": 256,
+        "value": 40.0
+      },
+      {
+        "success": 1.0,
+        "crash": 0.0,
+        "timeout": 0.0,
+        "time_to_target": 0.8436718583106995,
+        "avg_speed": 9.534720420837402,
+        "peak_speed": 18.49091339111328,
+        "n": 256,
+        "value": 50.0
+      }
+    ],
+    "student (camera only)": [
+      {
+        "success": 0.4921875,
+        "crash": 0.171875,
+        "timeout": 0.3359375,
+        "time_to_target": 2.9069836139678955,
+        "avg_speed": 2.8818249702453613,
+        "peak_speed": 14.320972442626953,
+        "n": 256,
+        "value": 10.0
+      },
+      {
+        "success": 0.7265625,
+        "crash": 0.09375,
+        "timeout": 0.1796875,
+        "time_to_target": 2.02193546295166,
+        "avg_speed": 4.904038906097412,
+        "peak_speed": 15.142206192016602,
+        "n": 256,
+        "value": 20.0
+      },
+      {
+        "success": 0.83203125,
+        "crash": 0.11328125,
+        "timeout": 0.0546875,
+        "time_to_target": 1.4290140867233276,
+        "avg_speed": 7.226994037628174,
+        "peak_speed": 16.980548858642578,
+        "n": 256,
+        "value": 30.0
+      },
+      {
+        "success": 0.71484375,
+        "crash": 0.15234375,
+        "timeout": 0.1328125,
+        "time_to_target": 1.6385791301727295,
+        "avg_speed": 6.8461761474609375,
+        "peak_speed": 18.215076446533203,
+        "n": 256,
+        "value": 40.0
+      },
+      {
+        "success": 0.26953125,
+        "crash": 0.359375,
+        "timeout": 0.37109375,
+        "time_to_target": 1.9872465133666992,
+        "avg_speed": 4.830286979675293,
+        "peak_speed": 17.95624542236328,
+        "n": 256,
+        "value": 50.0
+      }
+    ]
+  }
+}

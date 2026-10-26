@@ -1,0 +1,39 @@
+{
+  "gains": {
+    "cruise_pitch": 0.9,
+    "k_pitch": 6.0,
+    "k_roll": 4.0,
+    "bank": 1.0,
+    "k_yaw": 4.0,
+    "k_climb": 3.0,
+    "twr_guess": 5.5,
+    "tilt_guess": 0.785,
+    "detect": 0.12,
+    "k_los": 0.0,
+    "calibrated": true
+  },
+  "standard_15s": {
+    "success": 0.0302734375,
+    "crash": 0.900390625,
+    "timeout": 0.0693359375,
+    "time_to_target": 11.96903133392334,
+    "avg_speed": 12.48168659210205,
+    "peak_speed": 17.546276092529297,
+    "n": 1024,
+    "fail_min_dist_median": 154.08421325683594,
+    "fail_near_miss": 0.023162134944612285,
+    "success_180_230": 0.007272727272727273
+  },
+  "long_30s": {
+    "success": 0.060546875,
+    "crash": 0.9287109375,
+    "timeout": 0.0107421875,
+    "time_to_target": 17.172256469726562,
+    "avg_speed": 9.828245162963867,
+    "peak_speed": 17.3609676361084,
+    "n": 1024,
+    "fail_min_dist_median": 155.3604736328125,
+    "fail_near_miss": 0.02598752598752599,
+    "success_180_230": 0.04363636363636364
+  }
+}

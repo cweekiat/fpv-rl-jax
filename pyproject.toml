@@ -1,0 +1,12 @@
+[project]
+name = "fpv-rl-jax"
+version = "0.2.0"
+description = "Teaching a simulated FPV drone to fly from camera pixels with RL, in pure JAX"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+dependencies = [
+    "jax>=0.12.0.1",
+    "matplotlib>=3.11.2",
+    "optax>=0.2.8",
+]

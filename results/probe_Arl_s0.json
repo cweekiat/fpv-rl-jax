@@ -1,0 +1,16 @@
+{
+  "checkpoint": "ckpt/main/Arl_s0.pkl",
+  "samples": 37872,
+  "features": "penultimate",
+  "altitude": 0.47667312863011335,
+  "body_rates": 0.9163119019183722,
+  "gravity_dir_body": 0.868307820611408,
+  "latency_steps": 0.067636412119358,
+  "log_target_distance": 0.8788140056480158,
+  "speed": 0.6664018776297402,
+  "target_dir_body": 0.2934032710674867,
+  "thrust_to_weight": 0.036854786116910954,
+  "velocity_body": 0.6371976532891185,
+  "wind_world": -0.06181162876174451,
+  "shuffled_gravity_dir_body": -0.008119168126040558
+}

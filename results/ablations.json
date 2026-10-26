@@ -1,0 +1,79 @@
+{
+  "student": {
+    "success": 0.7978515625,
+    "crash": 0.115234375,
+    "timeout": 0.0869140625,
+    "time_to_target": 1.5863646268844604,
+    "avg_speed": 6.722766876220703,
+    "peak_speed": 16.891571044921875,
+    "n": 1024,
+    "fail_min_dist_median": 0.6618192195892334,
+    "fail_near_miss": 0.9903381642512077
+  },
+  "student_1frame": {
+    "success": 0.66015625,
+    "crash": 0.1728515625,
+    "timeout": 0.1669921875,
+    "time_to_target": 1.778727650642395,
+    "avg_speed": 6.092464447021484,
+    "peak_speed": 16.260513305664062,
+    "n": 1024,
+    "fail_min_dist_median": 0.7518839240074158,
+    "fail_near_miss": 0.9396551724137931
+  },
+  "student_bc": {
+    "success": 0.1640625,
+    "crash": 0.8359375,
+    "timeout": 0.0,
+    "time_to_target": 0.7854761481285095,
+    "avg_speed": 8.859405517578125,
+    "peak_speed": 18.004247665405273,
+    "n": 1024,
+    "fail_min_dist_median": 1.263225793838501,
+    "fail_near_miss": 0.6308411214953271
+  },
+  "student_noperc": {
+    "success": 0.6708984375,
+    "crash": 0.2578125,
+    "timeout": 0.0712890625,
+    "time_to_target": 1.3783113956451416,
+    "avg_speed": 7.4202728271484375,
+    "peak_speed": 18.289466857910156,
+    "n": 1024,
+    "fail_min_dist_median": 0.7113146781921387,
+    "fail_near_miss": 0.9643916913946587
+  },
+  "teacher": {
+    "success": 1.0,
+    "crash": 0.0,
+    "timeout": 0.0,
+    "time_to_target": 0.8528515696525574,
+    "avg_speed": 9.501066207885742,
+    "peak_speed": 18.14106559753418,
+    "n": 1024,
+    "fail_min_dist_median": null,
+    "fail_near_miss": null
+  },
+  "teacher_nodr": {
+    "success": 0.9130859375,
+    "crash": 0.0517578125,
+    "timeout": 0.03515625,
+    "time_to_target": 1.169069528579712,
+    "avg_speed": 8.254749298095703,
+    "peak_speed": 16.513973236083984,
+    "n": 1024,
+    "fail_min_dist_median": 0.5888823866844177,
+    "fail_near_miss": 1.0
+  },
+  "teacher_noperc": {
+    "success": 1.0,
+    "crash": 0.0,
+    "timeout": 0.0,
+    "time_to_target": 0.8418554067611694,
+    "avg_speed": 9.627017974853516,
+    "peak_speed": 19.415725708007812,
+    "n": 1024,
+    "fail_min_dist_median": null,
+    "fail_near_miss": null
+  }
+}

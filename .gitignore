@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.pkl
+.DS_Store
+.claude/
+ckpt/
+paper/
+logs/
+arxiv/
+arxiv_submission.tar.gz
+scripts/make_paper_numbers.py

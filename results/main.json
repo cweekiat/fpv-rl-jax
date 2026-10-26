@@ -1,0 +1,46 @@
+{
+  "teacher (true state) | DR=1": {
+    "success": 1.0,
+    "crash": 0.0,
+    "timeout": 0.0,
+    "time_to_target": 0.8528515696525574,
+    "avg_speed": 9.501066207885742,
+    "peak_speed": 18.14106559753418,
+    "n": 1024,
+    "fail_min_dist_median": null,
+    "fail_near_miss": null
+  },
+  "student (camera only) | DR=1": {
+    "success": 0.7978515625,
+    "crash": 0.115234375,
+    "timeout": 0.0869140625,
+    "time_to_target": 1.5863646268844604,
+    "avg_speed": 6.722766876220703,
+    "peak_speed": 16.891571044921875,
+    "n": 1024,
+    "fail_min_dist_median": 0.6618192195892334,
+    "fail_near_miss": 0.9903381642512077
+  },
+  "teacher (true state) | DR=0": {
+    "success": 1.0,
+    "crash": 0.0,
+    "timeout": 0.0,
+    "time_to_target": 0.8306444883346558,
+    "avg_speed": 9.664079666137695,
+    "peak_speed": 18.864601135253906,
+    "n": 1024,
+    "fail_min_dist_median": null,
+    "fail_near_miss": null
+  },
+  "student (camera only) | DR=0": {
+    "success": 0.9599609375,
+    "crash": 0.03515625,
+    "timeout": 0.0048828125,
+    "time_to_target": 1.1367852687835693,
+    "avg_speed": 8.363080978393555,
+    "peak_speed": 17.543306350708008,
+    "n": 1024,
+    "fail_min_dist_median": 0.5511908531188965,
+    "fail_near_miss": 1.0
+  }
+}

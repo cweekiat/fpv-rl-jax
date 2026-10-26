@@ -1,0 +1,62 @@
+{
+  "ckpt/lr_teacher.pkl": {
+    "standard_15s": {
+      "success": 0.9990234375,
+      "crash": 0.0009765625,
+      "timeout": 0.0,
+      "time_to_target": 4.87180757522583,
+      "avg_speed": 33.01823043823242,
+      "peak_speed": 39.12980270385742,
+      "n": 1024,
+      "fail_min_dist_median": 131.52774047851562,
+      "fail_near_miss": 0.0,
+      "success_100_140": 1.0,
+      "success_140_180": 0.9978213507625272,
+      "success_180_230": 1.0
+    },
+    "long_30s": {
+      "success": 0.9990234375,
+      "crash": 0.0009765625,
+      "timeout": 0.0,
+      "time_to_target": 4.87180757522583,
+      "avg_speed": 33.01823043823242,
+      "peak_speed": 39.12980270385742,
+      "n": 1024,
+      "fail_min_dist_median": 131.52774047851562,
+      "fail_near_miss": 0.0,
+      "success_100_140": 1.0,
+      "success_140_180": 0.9978213507625272,
+      "success_180_230": 1.0
+    }
+  },
+  "ckpt/lr_teacher_vis.pkl": {
+    "standard_15s": {
+      "success": 0.9951171875,
+      "crash": 0.0048828125,
+      "timeout": 0.0,
+      "time_to_target": 4.940058708190918,
+      "avg_speed": 32.64399337768555,
+      "peak_speed": 39.16529083251953,
+      "n": 1024,
+      "fail_min_dist_median": 53.17744827270508,
+      "fail_near_miss": 0.0,
+      "success_100_140": 0.9862068965517241,
+      "success_140_180": 0.9978213507625272,
+      "success_180_230": 1.0
+    },
+    "long_30s": {
+      "success": 0.9951171875,
+      "crash": 0.0048828125,
+      "timeout": 0.0,
+      "time_to_target": 4.940058708190918,
+      "avg_speed": 32.64399337768555,
+      "peak_speed": 39.16529083251953,
+      "n": 1024,
+      "fail_min_dist_median": 53.17744827270508,
+      "fail_near_miss": 0.0,
+      "success_100_140": 0.9862068965517241,
+      "success_140_180": 0.9978213507625272,
+      "success_180_230": 1.0
+    }
+  }
+}

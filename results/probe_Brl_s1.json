@@ -1,0 +1,14 @@
+{
+  "checkpoint": "ckpt/main/Brl_s1.pkl",
+  "samples": 28314,
+  "altitude": 0.5659863296906346,
+  "body_rates": 0.9180409050788461,
+  "gravity_dir_body": 0.8455993513931964,
+  "latency_steps": 0.1456101857091523,
+  "log_target_distance": 0.9103091136099062,
+  "speed": 0.8377178305182902,
+  "target_dir_body": 0.34316285990309664,
+  "thrust_to_weight": 0.08543795502366591,
+  "velocity_body": 0.777566853169119,
+  "wind_world": -0.10227592164834454
+}
